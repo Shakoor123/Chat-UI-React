@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./Login.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function Login() {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -30,8 +32,7 @@ function Login() {
             name,
           }
         );
-        console.log(res);
-        console.log(res.data);
+        setIsLogin(true);
       } catch (err) {
         console.log("err", err);
       }
@@ -42,8 +43,7 @@ function Login() {
           email,
           password,
         });
-        console.log(res);
-        console.log(res.data);
+        navigate("/");
       } catch (err) {
         console.log("err", err);
       }
@@ -60,7 +60,7 @@ function Login() {
 
   return (
     <div className="login-container">
-      <h2>{isLogin ? "Login" : "SignUp"}</h2>
+      <h2 className="h2">{isLogin ? "Login" : "SignUp"}</h2>
       <form onSubmit={handleSubmit}>
         {isLogin ? (
           ""
@@ -72,6 +72,7 @@ function Login() {
               placeholder=" "
               value={name}
               onChange={handleNameChange}
+              className="input"
             />
             <label htmlFor="email">Name</label>
           </div>
@@ -83,6 +84,7 @@ function Login() {
             placeholder=" "
             value={email}
             onChange={handleEmailChange}
+            className="input"
           />
           <label htmlFor="email">Email</label>
         </div>
@@ -93,6 +95,7 @@ function Login() {
             placeholder=" "
             value={password}
             onChange={handlePasswordChange}
+            className="input"
           />
           <label htmlFor="password">Password</label>
         </div>

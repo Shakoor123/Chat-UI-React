@@ -1,0 +1,60 @@
+.profile {
+  width: 500px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.imageSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.profileImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.imgBtn {
+  width: 100px;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  outline: none;
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.file {
+  display: none;
+}
+.crossButton {
+  background-color: white;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  align-self: flex-end;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.crossButton:hover {
+  background-color: rgb(184, 69, 69);
+  color: white;
+}
+@media only screen and (max-width: 400px) {
+  .profile,
+  .requests {
+    width: 100%;
+  }
+}

@@ -1,0 +1,9 @@
+.requests {
+  width: 500px;
+  display: flex;
+
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
