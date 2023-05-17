@@ -48,6 +48,7 @@ const Messenger = () => {
                       <h3>John Doe</h3>
                       <p>Last message received.</p>
                     </div>
+                    <div className="followText">+</div>
                   </li>
                   <li className="friend">
                     <img src="https://via.placeholder.com/50" alt="Profile" />

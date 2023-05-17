@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import "./Login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "../../redux/userRedux";
 function Login() {
   const [isLogin, setIsLogin] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -43,6 +47,7 @@ function Login() {
           email,
           password,
         });
+        dispatch(login(res.data));
         navigate("/");
       } catch (err) {
         console.log("err", err);
@@ -58,6 +63,13 @@ function Login() {
     }
   };
 
+  // const handleLogin = () => {
+  //   dispatch(login({ id: 1, name: 'John Doe' }));
+  // };
+
+  // const handleLogout = () => {
+  //   dispatch(logout());
+  // };
   return (
     <div className="login-container">
       <h2 className="h2">{isLogin ? "Login" : "SignUp"}</h2>

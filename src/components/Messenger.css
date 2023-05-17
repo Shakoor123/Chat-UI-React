@@ -35,9 +35,9 @@
 
 .friend {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 5px 10px;
   margin-bottom: 1rem;
   background-color: #f8f9fa;
   border-radius: 10px;
@@ -51,8 +51,8 @@
 }
 
 .friend img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin-right: 1rem;
   border-radius: 50%;
 }
@@ -251,7 +251,12 @@
   justify-content: center;
   flex-direction: column;
 }
-
+.followText {
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: gray;
+}
 /* For mobile devices */
 @media screen and (max-width: 500px) {
   .chat-container {
